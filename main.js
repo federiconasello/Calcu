@@ -1,26 +1,35 @@
 const pantalla = document.querySelector(".pantalla");
+const pantalla2 = document.querySelector(".pantalla2")
 const buttons = document.querySelectorAll(".btn");
 
-let numberA;
 
 buttons.forEach(btn =>{
+    let numberA;
+    let numberB;
+    const operadores = ['+', '-', '*', "/", "="]
     btn.addEventListener('click', (e) =>{
         const { target } = e
         const { textContent } = target
-
-        pantalla.innerHTML = pantalla.innerText + textContent
+        
+        if(!operadores.includes(textContent)) {
+            pantalla.innerHTML = pantalla.innerText + textContent
+        }
 
         if(textContent === "C"){
             pantalla.innerHTML = ''
+            pantalla2.innerHTML = ''
         }
         if(textContent === "←"){
             pantalla.innerHTML = pantalla.innerText.substring(0, pantalla.innerText.length - 2);
         }
         if( textContent === "*" || textContent === "-" || textContent === "+" || textContent === "/"){
-            numberA = pantalla.innerText.substring(0, pantalla.innerText.length - 1);
+            numberA = pantalla.innerText
+            pantalla2.innerHTML = numberA + ' ' + textContent
         }
-        console.log(numberA)
+        if( textContent === "="){
+        }
     })
+
 })
 
 
