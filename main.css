@@ -44,7 +44,6 @@ body {
   align-items: center;
   border-radius: .5rem;
   cursor: pointer;
-  
 }
 
 
@@ -56,7 +55,6 @@ body {
 .igual {
   grid-row: span 2;
   background-color: #b3104e;
-  
 
 }
 

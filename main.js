@@ -1,25 +1,27 @@
 const pantalla = document.querySelector(".pantalla");
-const btn = document.querySelectorAll(".btn");
-window.addEventListener()
+const buttons = document.querySelectorAll(".btn");
 
+let numberA;
 
+buttons.forEach(btn =>{
+    btn.addEventListener('click', (e) =>{
+        const { target } = e
+        const { textContent } = target
 
+        pantalla.innerHTML = pantalla.innerText + textContent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if(textContent === "C"){
+            pantalla.innerHTML = ''
+        }
+        if(textContent === "←"){
+            pantalla.innerHTML = pantalla.innerText.substring(0, pantalla.innerText.length - 2);
+        }
+        if( textContent === "*" || textContent === "-" || textContent === "+" || textContent === "/"){
+            numberA = pantalla.innerText.substring(0, pantalla.innerText.length - 1);
+        }
+        console.log(numberA)
+    })
+})
 
 
 
