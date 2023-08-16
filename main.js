@@ -26,8 +26,7 @@ buttons.forEach(btn =>{
             numberA = pantalla.innerText
             pantalla2.innerHTML = numberA + ' ' + textContent
         }
-        if( textContent === "="){
-        }
+      
     })
 
 })
